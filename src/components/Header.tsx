@@ -17,53 +17,80 @@ const Header: React.FC<HeaderProps> = ({
   return (
     <AppBar position="static" sx={{ 
       background: 'white',
-      boxShadow: '0 10px 30px rgba(0,0,0,0.1)',
-      borderRadius: '15px',
-      marginBottom: '30px'
+      boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
+      borderRadius: '8px',
+      marginBottom: '24px'
     }}>
-      <Toolbar sx={{ padding: '20px', justifyContent: 'space-between' }}>
-        <Box sx={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
+      <Toolbar sx={{ padding: '16px 24px', justifyContent: 'space-between' }}>
+        {/* Logo Section */}
+        <Box sx={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+          {/* ใช้ logo image แทน TGO box */}
           <Box sx={{
-            width: '60px',
-            height: '60px',
-            background: 'linear-gradient(45deg, #4CAF50, #2E7D32)',
-            borderRadius: '12px',
+            width: '48px',
+            height: '48px',
             display: 'flex',
             alignItems: 'center',
-            justifyContent: 'center',
-            color: 'white',
-            fontWeight: 'bold',
-            fontSize: '20px'
+            justifyContent: 'center'
           }}>
-            TGO
+            <img 
+              src="https://tgo-dist.pages.dev/icon.png" 
+              alt="TGO Logo"
+              style={{
+                width: '48px',
+                height: '48px',
+                objectFit: 'contain'
+              }}
+            />
           </Box>
           <Box>
-            <Typography variant="h4" sx={{ color: '#333', marginBottom: '5px', fontWeight: 'bold' }}>
+            <Typography variant="h5" sx={{ 
+              color: '#1a1a1a', 
+              marginBottom: '4px', 
+              fontWeight: '600',
+              fontSize: '1.5rem'
+            }}>
               CBAM Carbon Footprint Platform
             </Typography>
-            <Typography sx={{ color: '#666', fontSize: '0.9em' }}>
+            <Typography sx={{ 
+              color: '#666666', 
+              fontSize: '0.875rem',
+              fontWeight: '400'
+            }}>
               องค์การบริหารจัดการก๊าซเรือนกระจก (องค์การมหาชน)
             </Typography>
           </Box>
         </Box>
 
-        <Box sx={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
+        {/* User Info Section */}
+        <Box sx={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
           <Box sx={{ textAlign: 'right' }}>
-            <Typography sx={{ fontWeight: 600, color: '#333' }}>
+            <Typography sx={{ 
+              fontWeight: '600', 
+              color: '#1a1a1a',
+              fontSize: '0.875rem'
+            }}>
               {companyName}
             </Typography>
-            <Typography sx={{ color: '#666', fontSize: '0.9em' }}>
+            <Typography sx={{ 
+              color: '#666666', 
+              fontSize: '0.75rem'
+            }}>
               สถานะ: {userStatus}
             </Typography>
           </Box>
           <Button 
-            variant="contained" 
+            variant="outlined"
             onClick={handleLogout}
             sx={{
-              background: 'linear-gradient(45deg, #78909c, #546e7a)',
+              borderColor: '#e0e0e0',
+              color: '#666666',
+              backgroundColor: 'white',
+              padding: '8px 16px',
+              fontSize: '0.875rem',
+              fontWeight: '500',
               '&:hover': {
-                background: 'linear-gradient(45deg, #546e7a, #455a64)',
-                transform: 'translateY(-2px)'
+                backgroundColor: '#f5f5f5',
+                borderColor: '#d0d0d0'
               }
             }}
           >

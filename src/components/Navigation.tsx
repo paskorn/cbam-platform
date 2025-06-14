@@ -17,10 +17,10 @@ const Navigation: React.FC<NavigationProps> = ({ onPageChange }) => {
   return (
     <Box sx={{
       background: 'white',
-      borderRadius: '15px',
-      padding: '10px',
-      marginBottom: '30px',
-      boxShadow: '0 5px 15px rgba(0,0,0,0.08)'
+      borderRadius: '8px',
+      padding: '8px',
+      marginBottom: '24px',
+      boxShadow: '0 2px 8px rgba(0,0,0,0.1)'
     }}>
       <Tabs 
         value={activeTab} 
@@ -28,17 +28,18 @@ const Navigation: React.FC<NavigationProps> = ({ onPageChange }) => {
         sx={{
           '& .MuiTab-root': {
             flex: 1,
-            padding: '15px 20px',
-            borderRadius: '10px',
-            transition: 'all 0.3s ease',
-            fontWeight: 500,
-            fontSize: '1rem',
-            color: '#666'
+            padding: '12px 16px',
+            borderRadius: '6px',
+            transition: 'all 0.2s ease',
+            fontWeight: '500',
+            fontSize: '0.875rem',
+            color: '#666666',
+            textTransform: 'none'
           },
           '& .Mui-selected': {
-            background: 'linear-gradient(45deg, #667eea, #764ba2)',
-            color: 'white !important',
-            boxShadow: '0 5px 15px rgba(102, 126, 234, 0.4)'
+            background: '#f0f9ff',
+            color: '#0369a1 !important',
+            fontWeight: '600'
           }
         }}
         variant="fullWidth"
