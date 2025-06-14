@@ -1,25 +1,46 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { ThemeProvider, createTheme, CssBaseline, Container } from '@mui/material';
+import Header from './components/Header';
+
+const theme = createTheme({
+  typography: {
+    fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
+  },
+});
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <div style={{
+        background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+        minHeight: '100vh',
+        padding: '20px'
+      }}>
+        <Container maxWidth="xl">
+          <Header 
+            companyName="บริษัท เอบีซี จำกัด"
+            userStatus="ยืนยันแล้ว"
+          />
+          
+          <div style={{
+            background: 'white',
+            borderRadius: '15px',
+            padding: '30px',
+            textAlign: 'center',
+            minHeight: '400px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center'
+          }}>
+            <div>
+              <h2>🎉 CBAM Platform Development Started!</h2>
+              <p>Header Component สร้างเสร็จแล้ว! ขั้นต่อไปคือ Navigation และ Dashboard</p>
+            </div>
+          </div>
+        </Container>
+      </div>
+    </ThemeProvider>
   );
 }
 
