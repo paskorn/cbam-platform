@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { ThemeProvider, createTheme, CssBaseline, Container } from '@mui/material';
 import Header from './components/Header';
 import Navigation from './components/Navigation';
+import Register from './components/auth/Register';
+
 
 const theme = createTheme({
   typography: {
@@ -36,16 +38,8 @@ function App() {
           </div>
         );
       case 'form':
-        return (
-          <div>
-            <h2 style={{ color: '#1a1a1a', fontWeight: '600', marginBottom: '16px' }}>
-              📝 กรอกข้อมูล CBAM
-            </h2>
-            <p style={{ color: '#666666', fontSize: '1rem' }}>
-              ฟอร์มสำหรับกรอกข้อมูล Carbon Footprint
-            </p>
-          </div>
-        );
+        case 'form': // <-- แก้ไขตรงนี้
+        return <Register />; // <-- แสดง Component Register ของเรา
       case 'reports':
         return (
           <div>
